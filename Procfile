@@ -1,1 +1,1 @@
-web: gunicorn telusko2.wsgi
+web: gunicorn telusko2.wsgi --log-file-
