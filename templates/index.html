@@ -83,9 +83,16 @@
 		</div>
 		<div class="menu_content">
 			<ul>
-				<li><a href="{% static 'inex.html' %}">Home</a></li>
-				<li><a href="{% static 'about.html' %}">About us</a></li>
-				<li><a href="{% static '#' %}">Services</a></li>
+				<li><a href="{% static 'index.html' %}">Home</a></li>
+				{% if user.is_authenticated %}
+				<li><a href="accounts/logout">Logout</a></li>	
+				{% else %}
+				<li><a href="accounts/register">Register</a></li>
+									
+				<li><a href="accounts/login">Login</a></li>
+					
+				{% endif %}
+				
 				<li><a href="{% static 'news.html' %}">News</a></li>
 				<li><a href="{% static 'contact.html' %}">Contact</a></li>
 			</ul>
